@@ -1,0 +1,13 @@
+﻿svg {
+    max-width: 90vh;
+    max-height: 90vh;
+    margin-left: 50%;
+    position: fixed;
+    top: 0;
+}
+
+#ponyCreator {
+    width: 90%;
+    height: 75vh;
+    margin: 5% 0% 5% 5%;
+}
