@@ -2,6 +2,8 @@ function setRandom() {
     setBodyColor1(getRandomColor());
     setBodyColor2(getRandomColor());
     setEyeColor(getRandomColor());
+    setHairColor1(getRandomColor());
+    setTailColor1(getRandomColor());
     //and the list goes on...
 }
 
@@ -20,6 +22,20 @@ function setEyeColor(color) {
     eyepicker1.spectrum("set", color);
 }
 
+function setHairColor1(color) {
+    $("#ponyPart_hair1").children("g").children("path#assetcolor_1").attr("style", "fill: " + color + ";");
+    hairpicker1.spectrum("set", color);
+}
+
+function setTailColor1(color) {
+    $("#ponyPart_tail1").children("g").children("path#assetcolor_1").attr("style", "fill: " + color + ";");
+    tailpicker1.spectrum("set", color);
+}
+
+//
+//functions
+//
+
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
@@ -28,6 +44,26 @@ function getRandomColor() {
     }
     return color;
 }
+
+function copyHairLeft() {
+    setHairColor1(tailpicker1.spectrum("get"));
+}
+
+function copyHairRight() {
+    setTailColor1(hairpicker1.spectrum("get"));
+}
+
+function copyBodyLeft() {
+    setBodyColor1(bodypicker2.spectrum("get"));
+}
+
+function copyBodyRight() {
+    setBodyColor2(bodypicker1.spectrum("get"));
+}
+
+//
+//pickers
+//
 
 var bodypicker1 = $("#bodyPicker1").spectrum({
     preferredFormat: "rgb",
@@ -65,5 +101,31 @@ var eyepicker1 = $("#eyePicker1").spectrum({
 
     move: function (color) {
         setEyeColor(color.toRgbString());
+    }
+});
+
+var hairpicker1 = $("#hairPicker1").spectrum({
+    preferredFormat: "rgb",
+    //flat: true,
+    color: getRandomColor(),
+    clickoutFiresChange: true,
+    showInput: true,
+    showButtons: false,
+
+    move: function (color) {
+        setHairColor1(color.toRgbString());
+    }
+});
+
+var tailpicker1 = $("#tailPicker1").spectrum({
+    preferredFormat: "rgb",
+    //flat: true,
+    color: getRandomColor(),
+    clickoutFiresChange: true,
+    showInput: true,
+    showButtons: false,
+
+    move: function (color) {
+        setTailColor1(color.toRgbString());
     }
 });

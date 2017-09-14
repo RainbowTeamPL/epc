@@ -78,6 +78,8 @@
     <Content Include="html\img\android-chrome-192x192.png" />
     <Content Include="html\img\android-chrome-512x512.png" />
     <Content Include="html\img\apple-touch-icon.png" />
+    <Content Include="html\img\bg-thumb.jpg" />
+    <Content Include="html\img\bg.jpg" />
     <Content Include="html\img\favicon-16x16.png" />
     <Content Include="html\img\favicon-32x32.png" />
     <Content Include="html\img\mstile-150x150.png" />

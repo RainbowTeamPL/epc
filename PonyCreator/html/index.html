@@ -63,7 +63,8 @@
             <div id="bodyPickers" class="collapse colorPicker">
                 <br />
                 <input type='text' id="bodyPicker1" />
-
+                <button type="button" class="btn btn-info" onclick="copyBodyLeft()">←</button>
+                <button type="button" class="btn btn-info" onclick="copyBodyRight()">→</button>
                 <input type='text' id="bodyPicker2" />
             </div>
             <br />
@@ -74,6 +75,18 @@
             <div id="eyePicker" class="collapse colorPicker">
                 <br />
                 <input type='text' id="eyePicker1" />
+            </div>
+            <br />
+            <button type="button" class="btn btn-outline-info" data-toggle="collapse" data-target="#hairPicker" aria-expanded="false" aria-controls="collapse">
+                Hair Color
+            </button>
+            <br />
+            <div id="hairPicker" class="collapse colorPicker">
+                <br />
+                <input type='text' id="hairPicker1" />
+                <button type="button" class="btn btn-info" onclick="copyHairLeft()">←</button>
+                <button type="button" class="btn btn-info" onclick="copyHairRight()">→</button>
+                <input type='text' id="tailPicker1" />
             </div>
         </div>
     </div>
