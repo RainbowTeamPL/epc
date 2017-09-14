@@ -1,4 +1,4 @@
-﻿svg {
+﻿svg, img {
     max-width: 90vh;
     max-height: 90vh;
     margin-left: 50%;
@@ -10,4 +10,14 @@
     width: 90%;
     height: 75vh;
     margin: 5% 0% 5% 5%;
+}
+
+.ponyPart {
+    position: absolute;
+}
+
+body {
+    background: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }

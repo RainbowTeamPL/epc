@@ -33,29 +33,47 @@
     <![endif]-->
 </head>
 <body>
-    <div id="ponyCreator" class="breadcrumb align-middle">
+    <div id="ponyCreator" class="page-item align-middle">
         <div class="ponyParts">
-            <div class="ponyPart_body_div" style="position: absolute">
+            <div class="ponyPart_body_div ponyPart">
                 <img id="ponyPart_body" src="svg/ponybody.svg" class="svg" />
             </div>
-            <div class="ponyPart_eyes1_div" style="position: absolute">
+            <div class="ponyPart_eyes1_div ponyPart" style="position: absolute">
                 <img id="ponyPart_eyes1" src="svg/ponyeyes1.svg" class="svg" />
             </div>
-            <div class="ponyPart_hair1_div" style="position: absolute">
+            <div class="ponyPart_hair1_div ponyPart" style="position: absolute">
                 <img id="ponyPart_hair1" src="svg/ponyhair1.svg" class="svg" />
             </div>
-            <div class="ponyPart_tail1_div" style="position: absolute">
+            <div class="ponyPart_tail1_div ponyPart" style="position: absolute">
                 <img id="ponyPart_tail1" src="svg/ponytail1.svg" class="svg" />
             </div>
         </div>
-        <div id="ponyEditor" style="position: relative">
+        <div id="ponyEditor">
 
-            <button class="ui-button btn btn-lg" onclick="setBodyColor1('rgb(255, 0, 0)')"></button>
-            <button class="ui-button btn btn-lg" onclick="setBodyColor2('rgb(255, 0, 0)')"></button>
-            <button class="ui-button btn btn-lg" onclick="setRandom()"></button>
+            <div class="page-item" aria-label="...">
+                <button class="btn btn-info" onclick="setBodyColor1('rgb(255, 0, 0)')">1</button>
+                <button class="btn btn-info" onclick="setBodyColor2('rgb(255, 0, 0)')">2</button>
+                <button class="btn btn-info" onclick="setRandom()">Random</button>
+            </div>
+            <br />
+            <button type="button" class="btn btn-outline-info" data-toggle="collapse" data-target="#bodyPickers" aria-expanded="false" aria-controls="collapse">
+                Body Colors
+            </button>
+            <br />
+            <div id="bodyPickers" class="collapse colorPicker">
+                <br />
+                <input type='text' id="bodyPicker1" />
 
-            <div id="colorPicker" class="colorPicker">
-                <input type='text' id="picker" />
+                <input type='text' id="bodyPicker2" />
+            </div>
+            <br />
+            <button type="button" class="btn btn-outline-info" data-toggle="collapse" data-target="#eyePicker" aria-expanded="false" aria-controls="collapse">
+                Eye Color
+            </button>
+            <br />
+            <div id="eyePicker" class="collapse colorPicker">
+                <br />
+                <input type='text' id="eyePicker1" />
             </div>
         </div>
     </div>
@@ -75,20 +93,11 @@
     <script type="text/javascript">
         //$("img.lazy").lazyload();
 
-        //$("#ponyPart_body").children("g").children("path#assetcolor_1").attr("style", "fill: rgb(255, 0, 0);");
-
-        var bodypicker1 = $("#picker").spectrum({
-            preferredFormat: "rgb",
-            flat: true,
-            color: getRandomColor(),
-            clickoutFiresChange: true,
-            showInput: true,
-            showButtons: false,
-
-            move: function (color) {
-                setBodyColor1(color.toRgbString());
-            }
+        $(document).ready(function () {
+            setTimeout(setRandom, 10); //hack for svgreplace
         });
+
+        //$("#ponyPart_body").children("g").children("path#assetcolor_1").attr("style", "fill: rgb(255, 0, 0);");
     </script>
 </body>
 </html>
